@@ -5,7 +5,7 @@ import { UNKNOWN_ERROR } from "../../utils/constant";
 import { IErrorMessage, IResponseFailure } from "./interface";
 
 class ErrorHandler {
-    private generalErrors = new Map();
+  private generalErrors = new Map();
   public async handleError(
     err: any,
     req: Request,

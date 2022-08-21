@@ -1,10 +1,10 @@
 import { createCipheriv, createDecipheriv, scryptSync } from "crypto";
 
 export interface EncryptionConfig {
-    algorithm: string;
-    key: string | Buffer;
-    iv: string | Buffer;
-  }
+  algorithm: string;
+  key: string | Buffer;
+  iv: string | Buffer;
+}
 
 const UTF8_ENCODING = "utf8";
 const HEX_ENCODING = "hex";
@@ -39,10 +39,10 @@ export const serializeDecrypt = (
   return JSON.parse(decrypt(encryptionConfig, text));
 };
 
-export const getEncryptionConfig = (key: string): EncryptionConfig  => {
-    return {
-      algorithm: "aes-192-cbc",
-      key: scryptSync(key, "salt", 24),
-      iv: Buffer.alloc(16, 0),
-    };
-  }
+export const getEncryptionConfig = (key: string): EncryptionConfig => {
+  return {
+    algorithm: "aes-192-cbc",
+    key: scryptSync(key, "salt", 24),
+    iv: Buffer.alloc(16, 0),
+  };
+};

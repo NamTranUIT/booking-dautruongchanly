@@ -1,4 +1,3 @@
-import { NextFunction } from "express";
 import mongoose from "mongoose";
 import environment from "../../utils/environment";
 import { logger } from "../logger/logger";

@@ -6,7 +6,7 @@ class UserRepository {
   }
 
   public async getUser(username: string) {
-    return userModel.findOne({username}).lean();
+    return userModel.findOne({ username }).lean();
   }
 }
 

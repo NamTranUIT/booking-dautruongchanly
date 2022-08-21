@@ -8,19 +8,18 @@ import { transformAndValidate } from "class-transformer-validator";
 import { CreateBookingRequest } from "./booking.dto";
 import { logger } from "../common/logger/logger";
 
-
-errorHandler.load(errors)
+errorHandler.load(errors);
 
 class BookingHandler {
-    @api(StatusCodes.CREATED)
-    public async createBooking(req: Request) {
-        const request = (await transformAndValidate(
-            CreateBookingRequest,
-            req.body as string
-          )) as CreateBookingRequest;
-          logger.info("Start create booking")
-        return bookingService.createBooking(request);
-    }
+  @api(StatusCodes.CREATED)
+  public async createBooking(req: Request) {
+    const request = (await transformAndValidate(
+      CreateBookingRequest,
+      req.body as string
+    )) as CreateBookingRequest;
+    logger.info("Start create booking");
+    return bookingService.createBooking(request);
+  }
 }
 
 export const bookingHandler = new BookingHandler();

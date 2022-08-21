@@ -4,7 +4,9 @@ import { userRepository } from "./users.repository";
 
 class UserService {
   public async createUser(req: CreateUserRequest) {
-    const createdUser = await userRepository.createUser(userMapper.toUserCreationRequest(req));
+    const createdUser = await userRepository.createUser(
+      userMapper.toUserCreationRequest(req)
+    );
     return userMapper.toUserResponse(createdUser);
   }
 

@@ -25,5 +25,8 @@ export const logger = createLogger({
     customFormat
   ),
   level: environment.LOG_LEVEL || "warn",
-  transports: [new transports.Console(), new transports.File({dirname: "./logFile", filename: `log`})],
+  transports: [
+    new transports.Console(),
+    new transports.File({ dirname: "./logFile", filename: `log` }),
+  ],
 });

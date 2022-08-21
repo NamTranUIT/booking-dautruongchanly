@@ -1,6 +1,10 @@
 import { StatusCodes } from "http-status-codes";
 import { UNKNOWN_ERROR, VALIDATION_ERROR } from "../../utils/constant";
-import { InvalidUsernameOrPassword, ObjectNotFound, PermissionDeniedError } from "./errors";
+import {
+  InvalidUsernameOrPassword,
+  ObjectNotFound,
+  PermissionDeniedError,
+} from "./errors";
 
 export const errors = new Map();
 
@@ -31,5 +35,5 @@ errors.set(PermissionDeniedError.name, {
 errors.set(InvalidUsernameOrPassword.name, {
   code: "1000",
   message: "Invalid username or password",
-  httpStatusCode: StatusCodes.UNAUTHORIZED
+  httpStatusCode: StatusCodes.UNAUTHORIZED,
 });
